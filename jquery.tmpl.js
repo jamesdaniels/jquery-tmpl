@@ -119,8 +119,8 @@
 						var def = tmpl._default;
 
 						return "');" + tmpl[slash ? "suffix" : "prefix"]
-							.split("$1").join(args || def[0])
-							.split("$2").join(fnargs || def[1]) + "_.push('";
+							.split("$1").join(args || def && def[0])
+							.split("$2").join(fnargs || def && def[1]) + "_.push('";
 					})
 				+ "');}return $(_.join('')).get();");
 
